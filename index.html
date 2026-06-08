@@ -13,8 +13,6 @@
 
 <body>
 
-
-    <!--  navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #03045e;">
         <div class="container">
             <img src="img/logo-green.png" style="height: 90px;" alt="">
@@ -22,11 +20,9 @@
                 Cancha<span style="color:  #62ff00;">Facil </span>
             </a>
 
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
 
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
@@ -34,29 +30,25 @@
                         <a class="nav-link active" href="index.html">Inicio</a>
                     </li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link active" href="html/reservas.html">Reservas</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="html/nosotros.html">Sobre Nosotros</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="html/contacto.html">Contacto</a>
+                        <a class="nav-link active" href="/html/reservas.html">Reservas</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="html/login.html" class="btn btn-info border-0 ms-2" style="background-color: #62ff00;"">Iniciar Sesión</a>
+                        <a class="nav-link active" href="/html/nosotros.html">Sobre Nosotros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/html/contacto.html">Contacto</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/html/login.html" class="btn btn-info border-0 ms-2" style="background-color: #62ff00;">Iniciar Sesión</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
 
     <section class="hero">
         <div class="container">
@@ -65,15 +57,12 @@
                 Vive la pasión del fútbol en las mejores canchas sintéticas
             </p>
 
-
-            <a href="html/reservas.html" class="btn btn-success btn-lg mt-3" style="background-color: #03045e;"">
+            <a href="/html/reservas.html" class="btn btn-success btn-lg mt-3" style="background-color: #03045e;">
                 Reservar Ahora
             </a>
         </div>
     </section>
 
-
-    <!--Seccion4-->
     <div class="container">
         <section class=" seccion-porque">
 
@@ -90,7 +79,6 @@
                         </div>
                     </div>
 
-
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="porque-card">
                             <span class="porque-icono"><i class="bi bi-hourglass-split"></i></span>
@@ -99,7 +87,6 @@
                         </div>
                     </div>
 
-
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="porque-card">
                             <span class="porque-icono"><i class="bi bi-lock"></i></span>
@@ -107,7 +94,6 @@
                             <p class="porque-texto">Realiza tu reserva con métodos de pago rápidos y confiables.</p>
                         </div>
                     </div>
-
 
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="porque-card">
@@ -118,13 +104,11 @@
                         </div>
                     </div>
 
-
                 </div>
 
         </section>
     </div>
 
-    <!--carrusel-->
     <div class="container">
         <section class="carousel-wrapper">
             <div id="canchaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
@@ -134,7 +118,6 @@
                     <button type="button" data-bs-target="#canchaCarousel" data-bs-slide-to="2"></button>
                     <button type="button" data-bs-target="#canchaCarousel" data-bs-slide-to="3"></button>
                 </div>
-
 
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -179,72 +162,41 @@
                     </div>
                 </div>
 
-
                 <button class="carousel-control-prev" type="button" data-bs-target="#canchaCarousel"
-                    data-bs-slide="prev">
+                    data-bs-slide-prev>
                     <span class="carousel-control-prev-icon"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#canchaCarousel"
-                    data-bs-slide="next">
+                    data-bs-slide-next>
                     <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
         </section>
     </div>
 
-
-    <!--SECCIÓN — TESTIMONIOS Y RESEÑAS-->
-    <section class="seccion-testimonios">
-
-
-        <h1 class="titulo-seccion">LO QUE DICEN NUESTROS JUGADORES</h1>
-        <p class="subtit-seccion">Más de 500 equipos ya confían en Cancha Fácil</p>
-
-
-        <div class="row g-4 justify-content-center px-3 mt-2">
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="testimonio-card">
-                    <span class="comilla">"</span>
-                    <div class="estrellas">★★★★★</div>
-                    <p class="testimonio-texto">La cancha está en perfectas condiciones, el pasto sintético es increíble
-                        y la iluminación nocturna es excelente. Definitivamente volveremos.</p>
-                    <div class="testimonio-nombre">Carlos Mendoza</div>
-                    <div class="testimonio-rol">Capitán — Los Galácticos FC</div>
-                </div>
+    <div class="rf-header text-center">
+        <h2 class="rf-titulo">LO QUE DICE NUESTRA COMUNIDAD</h2>
+        <p class="rf-sub">Jugadores reales, experiencias reales en Cancha Fácil</p>
+        <div class="rf-stats">
+            <div>
+                <span class="rf-stat-num" id="stat-total">5</span>
+                <span class="rf-stat-lbl">Reseñas</span>
             </div>
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="testimonio-card">
-                    <span class="comilla">"</span>
-                    <div class="estrellas">★★★★★</div>
-                    <p class="testimonio-texto">Reservé en menos de 2 minutos desde el celular. El proceso es super
-                        fácil y el precio es justo. Las instalaciones son de primer nivel.</p>
-                    <div class="testimonio-nombre">Valentina Ríos</div>
-                    <div class="testimonio-rol">Jugadora amateur</div>
-                </div>
+            <div>
+                <span class="rf-stat-num" id="stat-prom">4.8</span>
+                <span class="rf-stat-lbl">Promedio</span>
             </div>
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="testimonio-card">
-                    <span class="comilla">"</span>
-                    <div class="estrellas">★★★★★</div>
-                    <p class="testimonio-texto">Organizamos torneos aquí cada mes. El staff es muy amable, siempre
-                        puntuales y las canchas siempre en perfectas condiciones. 100% recomendados.</p>
-                    <div class="testimonio-nombre">Andrés Camargo</div>
-                    <div class="testimonio-rol">Organizador de torneos</div>
-                </div>
+            <div>
+                <span class="rf-stat-num">98%</span>
+                <span class="rf-stat-lbl">Recomiendan</span>
             </div>
-
         </div>
+        
+        <div class="mt-4">
+            <a href="#" class="btn btn-ver-reseñas">Ver reseñas</a>
+        </div>
+    </div>
 
-    </section>
-
-
-    <!--Footer-->
     <footer class="bg-dark text-light">
         <div class="container">
             <div class="p-4">

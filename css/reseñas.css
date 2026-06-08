@@ -1,40 +1,23 @@
-/* ==========================================================================
-   1. IMPORTACIONES, VARIABLES Y RESET
-   ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap');
-
+/* CONFIGURACIÓN GENERAL Y PALETA DE COLORES */
 :root {
     --primary-color: #62FF00;   /* Verde Principal */
-    --bg-black: #000000;        /* Negro Absoluto Fondo principal */
+    --bg-black: #000000;        /* Negro Secundario Fondo principal */
     --bg-dark-card: #121212;    /* Variación gris oscuro para contenedores */
     --text-white: #FFFFFF;      /* Blanco apoyo */
-    --hover-gray: #525151;      /* Color Hover / Fondo Alterno */
-    --danger-red: #ef4444;      /* Rojo Errores/Eliminaciones */
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    --hover-gray: #525151;      /* Color Hover */
+    --danger-red: #ef4444;
 }
 
 body.adm-body {
     background-color: var(--bg-black);
-    /* Imagen de fondo unificada con filtro oscuro corporativo */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/fondo-admi.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--text-white);
     font-family: 'Nunito', sans-serif;
     min-height: 100vh;
+    margin: 0;
     overflow-x: hidden;
 }
 
-/* ==========================================================================
-   2. NAVBAR COMPARTIDO Y BOTONES DE NAVEGACIÓN (PESTAÑAS)
-   ========================================================================== */
+/* NAVBAR ADAPTADO COMPLETO CON TUS CLASES */
 .cancha-nav {
     background-color: var(--bg-black) !important;
     border-bottom: 2px solid #1c2222 !important;
@@ -50,132 +33,39 @@ body.adm-body {
     text-decoration: none;
 }
 
-/* Botón estilo pestaña (Activa / Inactiva) */
-.btn-custom {
-    background-color: transparent;
-    color: var(--text-white);
-    border: 2px solid transparent;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    padding: 8px 24px;
-    transition: all 0.3s ease-in-out;
+.text-verde {
+    color: var(--primary-color) !important;
 }
 
-.btn-custom:hover {
-    background-color: var(--hover-gray);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-custom.active {
+/* BOTÓN DE INICIO CON EFECTOS DE COLOR SOLICITADOS */
+.btn-inicio-navy {
     background-color: var(--primary-color) !important;
     color: var(--bg-black) !important;
-    border-color: var(--primary-color) !important;
-    box-shadow: 0 0 15px rgba(98, 255, 0, 0.4);
+    font-size: 0.95rem;
+    padding: 8px 32px !important;
+    border: none !important;
+    transition: background-color 0.2s, transform 0.15s, color 0.2s !important;
 }
 
-/* Botón de Salir */
-.btn-salir {
-    background-color: #2a1414;
-    color: var(--danger-red);
-    border: 2px solid var(--danger-red);
-    transition: all 0.2s ease-in-out;
+.btn-inicio-navy:hover {
+    background-color: var(--hover-gray) !important;   /* #525151 */
+    color: var(--text-white) !important;              /* #FFFFFF */
+    transform: scale(1.03);
 }
 
-.btn-salir:hover {
-    background-color: var(--danger-red);
-    color: var(--text-white);
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
-    transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   3. MÓDULO: INGRESO MES (Tarjetas de Reservas y Panel Lateral)
-   ========================================================================== */
-.tarjeta-reserva {
-    background-color: var(--bg-dark-card);
-    border: 1px solid #222;
-    border-left: 5px solid var(--primary-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tarjeta-reserva:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(98, 255, 0, 0.15) !important;
-}
-
-.text-bg-verde {
-    background-color: var(--primary-color) !important;
-    color: var(--bg-black) !important;
-}
-
-.panel-lateral {
-    background-color: var(--bg-dark-card);
-    border: 1px solid #222;
-    border-top: 5px solid var(--primary-color);
-}
-
-.btn-panel-action {
-    background-color: var(--primary-color);
-    color: var(--bg-black);
-    border: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-panel-action:hover {
-    background-color: var(--hover-gray);
-    color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(98, 255, 0, 0.4);
-    transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   4. MÓDULO: HISTORIAL DE INGRESOS (Gráfico e Historial Mensual)
-   ========================================================================== */
-.cuadro-grafico {
-    background-color: var(--bg-dark-card);
-    border: 1px solid #222;
-}
-
-.listado-meses {
-    max-height: 480px;
-    overflow-y: auto;
-}
-
-.tarjeta-mes {
-    background-color: var(--bg-dark-card); 
-    border: 1px solid #222;
-    border-left: 5px solid var(--primary-color); 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tarjeta-mes:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(98, 255, 0, 0.2) !important;
-}
-
-.monto-ingreso {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.4rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-/* ==========================================================================
-   5. MÓDULO: PANEL DE RESEÑAS (Filtros, Tablas y Modales)
-   ========================================================================== */
+/* ENCABEZADO Y TITULOS */
 .adm-titulo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
     letter-spacing: 2px;
     color: var(--text-white);
 }
-
 .adm-sub {
     color: #888;
     font-size: 0.9rem;
 }
 
+/* CAJAS DE ESTADÍSTICAS */
 .adm-stat-box {
     background: var(--bg-dark-card);
     border: 1px solid #222;
@@ -184,7 +74,6 @@ body.adm-body {
     min-width: 110px;
     text-align: center;
 }
-
 .adm-stat-n {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.2rem;
@@ -192,7 +81,6 @@ body.adm-body {
     display: block;
     line-height: 1;
 }
-
 .adm-stat-l {
     font-size: 0.75rem;
     color: #666;
@@ -200,12 +88,12 @@ body.adm-body {
     font-weight: 700;
 }
 
+/* FILTROS Y TOOLBAR */
 .adm-toolbar {
     background: var(--bg-dark-card);
     border: 1px solid #222;
     border-radius: 14px;
 }
-
 .adm-select, .adm-input {
     background-color: var(--bg-black) !important;
     border: 1.5px solid #222 !important;
@@ -214,16 +102,15 @@ body.adm-body {
     font-size: 0.9rem;
     padding: 10px;
 }
-
 .adm-select:focus, .adm-input:focus {
     border-color: var(--primary-color) !important;
-    box-shadow: 0 0 10px rgba(98, 255, 0, 0.3) !important;
+    box-shadow: none !important;
 }
-
 .adm-input::placeholder {
     color: #555;
 }
 
+/* BOTÓN FILTRO DE ARCHIVADOS */
 .adm-btn-arch {
     background: var(--bg-black);
     color: var(--text-white);
@@ -235,35 +122,30 @@ body.adm-body {
     white-space: nowrap;
     transition: all 0.2s;
 }
-
 .adm-btn-arch:hover {
     background: var(--hover-gray);
     border-color: var(--hover-gray);
 }
-
 .adm-btn-arch.activo {
     background: var(--primary-color);
     color: var(--bg-black);
     border-color: var(--primary-color);
 }
 
-/* Estructura de la Tabla */
+/* ESTRUCTURA DE LA TABLA COMPACTA Y FLUIDA */
 .adm-tabla-wrap {
     overflow-x: auto;
     border-radius: 12px;
 }
-
 .adm-tabla {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 8px;
     min-width: 1000px;
 }
-
 .adm-tabla thead tr {
     background-color: var(--bg-dark-card);
 }
-
 .adm-tabla thead th {
     color: var(--primary-color);
     padding: 16px;
@@ -272,7 +154,6 @@ body.adm-body {
     letter-spacing: 1px;
     border: none;
 }
-
 .adm-tabla thead th:first-child { border-radius: 8px 0 0 8px; }
 .adm-tabla thead th:last-child  { border-radius: 0 8px 8px 0; }
 
@@ -281,12 +162,10 @@ body.adm-body {
     border: 1px solid #1e1e1e;
     transition: transform 0.15s, background-color 0.15s;
 }
-
 .adm-tabla tbody tr:hover {
     background-color: #181818;
     transform: scale(1.002);
 }
-
 .adm-tabla tbody td {
     padding: 16px;
     font-size: 0.9rem;
@@ -294,10 +173,10 @@ body.adm-body {
     vertical-align: middle;
     border: none;
 }
-
 .adm-tabla tbody td:first-child { border-radius: 8px 0 0 8px; }
 .adm-tabla tbody td:last-child  { border-radius: 0 8px 8px 0; }
 
+/* AVATAR DE USUARIO */
 .adm-avatar {
     width: 36px;
     height: 36px;
@@ -312,6 +191,7 @@ body.adm-body {
     flex-shrink: 0;
 }
 
+/* ETIQUETAS */
 .adm-tag {
     background: #1e1e1e;
     color: #aaa;
@@ -321,7 +201,6 @@ body.adm-body {
     border-radius: 6px;
     white-space: nowrap;
 }
-
 .adm-tag.cancha {
     background: rgba(98, 255, 0, 0.1);
     color: var(--primary-color);
@@ -333,14 +212,13 @@ body.adm-body {
     color: #ddd;
     line-height: 1.5;
 }
-
 .adm-fecha {
     white-space: nowrap;
     color: #666;
     font-size: 0.85rem;
 }
 
-/* Botones de acción dentro de la tabla */
+/* BOTONES DE ACCIÓN */
 .adm-btn {
     border: none;
     border-radius: 6px;
@@ -352,47 +230,58 @@ body.adm-body {
     transition: background-color 0.2s, transform 0.1s;
     white-space: nowrap;
 }
-
 .adm-btn:hover {
     transform: translateY(-1px);
 }
-
 .adm-btn.archivar {
     background: #222;
     color: #fff;
 }
-
 .adm-btn.archivar:hover {
     background: var(--hover-gray);
 }
-
 .adm-btn.restaurar {
     background: rgba(98,255,0,0.15);
     color: var(--primary-color);
 }
-
 .adm-btn.restaurar:hover {
     background: rgba(98,255,0,0.3);
 }
-
 .adm-btn.eliminar {
     background: #2a1414;
     color: var(--danger-red);
 }
-
 .adm-btn.eliminar:hover {
     background: #451a1a;
 }
 
+/* MENSAJE BANNER DE ARCHIVOS */
 .adm-arch-banner {
     background: #2a1a00;
     border-left: 4px solid #ff9900;
     color: #ff9900;
     font-weight: 600;
     font-size: 0.9rem;
+    border-radius: 4px;
 }
 
-/* Modal de eliminación */
+.adm-empty {
+    text-align: center;
+    color: #444;
+    font-weight: 600;
+}
+
+/* ANIMACIÓN FILAS */
+@keyframes fila-salir {
+    from { opacity: 1; transform: scaleY(1); }
+    to   { opacity: 0; transform: scaleY(0); }
+}
+.adm-tabla tbody tr.salir {
+    animation: fila-salir 0.25s ease forwards;
+    transform-origin: top;
+}
+
+/* MODAL OSCURO */
 .adm-modal-overlay {
     position: fixed;
     inset: 0;
@@ -403,75 +292,55 @@ body.adm-body {
     z-index: 1100;
     backdrop-filter: blur(4px);
 }
-
 .adm-modal {
     background: var(--bg-dark-card);
     border: 1px solid #222;
+    border-radius: 16px;
     max-width: 380px;
     width: 90%;
     animation: modal-in 0.2s ease-out;
 }
-
+@keyframes modal-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+.adm-modal-icon { font-size: 2.5rem; }
 .adm-modal-titulo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
     color: var(--danger-red);
 }
+.adm-modal-texto { color: #888; }
 
 .adm-btn-cancelar {
     background: #222;
     color: var(--text-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
 }
-
 .adm-btn-cancelar:hover { background: var(--hover-gray); }
 
 .adm-btn-confirmar {
     background: var(--danger-red);
     color: var(--text-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
 }
-
 .adm-btn-confirmar:hover { background: #b91c1c; }
 
-/* ==========================================================================
-   6. ANIMACIONES Y PERSONALIZACIÓN DE SCROLLBARS
-   ========================================================================== */
-@keyframes fila-salir {
-    from { opacity: 1; transform: scaleY(1); }
-    to   { opacity: 0; transform: scaleY(0); }
-}
-
-@keyframes modal-in {
-    from { opacity: 0; transform: scale(0.95); }
-    to   { opacity: 1; transform: scale(1); }
-}
-
-.adm-tabla tbody tr.salir {
-    animation: fila-salir 0.25s ease forwards;
-    transform-origin: top;
-}
-
-/* Scrollbar General y Tablas */
-.custom-scrollbar::-webkit-scrollbar,
-.listado-meses::-webkit-scrollbar {
-    width: 6px;
+/* PERSONALIZACIÓN SCROLLBAR PARA LA TABLA */
+.custom-scrollbar::-webkit-scrollbar {
     height: 8px;
 }
-
-.custom-scrollbar::-webkit-scrollbar-track,
-.listado-meses::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track {
     background: var(--bg-black);
 }
-
-.custom-scrollbar::-webkit-scrollbar-thumb,
-.listado-meses::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb {
     background: #222;
     border-radius: 10px;
 }
-
-.listado-meses::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-}
-
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: var(--hover-gray);
 }
