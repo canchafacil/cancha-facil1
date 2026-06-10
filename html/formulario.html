@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reserva de Canchas</title>
+    <link rel="icon" href="../img/logo-green.png">
+    <link rel="stylesheet" href="reservas.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #03045e;">
+        <div class="container">
+            <img src="../img/logo-green.png" style="height: 90px;" alt="">
+            <a class="navbar-brand fw-bold ms-2" href="#" style="font-size: 2rem; color: white;">
+                Cancha<span style="color:  #62ff00;">Facil </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/index.html">Inicio</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/html/reservas.html">Reservas</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/html/nosotros.html">Sobre Nosotros</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/html/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <div class=" container mt-4">
+                            <div class="row">
+
+                                <!-- FORMULARIO -->
+                                <div class="col-md-6">
+                                    <div class="card p-4 shadow">
+                                        <h4 class="mb-3">Reservar Cancha</h4>
+
+                                        <form id="formReserva">
+                                            <div class="mb-3">
+                                                <label>Nombre</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label>Teléfono</label>
+                                                <input type="number" class="form-control" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label>Fecha</label>
+                                                <input type="date" class="form-control" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label>Hora</label>
+                                                <input type="time" class="form-control" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label>Tipo de cancha</label>
+                                                <select class="form-control">
+                                                    <option>Fútbol 5</option>
+                                                    <option>Fútbol 7</option>
+                                                    <option>Fútbol 11</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label>Duración</label>
+                                                <select class="form-control">
+                                                    <option>1 Hora</option>
+                                                    <option>2 Horas</option>
+                                                </select>
+                                            </div>
+
+                                            <button class="btn-pagar" 
+                                                    style="background-color: #62ff00; color: #03045e; cursor: pointer; width: 100%; border: none; padding: 10px; border-radius: 8px; font-weight: bold;" 
+                                                    onclick="window.location.href='pago.html'">
+                                                Pagar Ahora
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                    <!--  HORARIOS DISPONIBLES -->
+                                    <div class="card mt-4 p-3 shadow">
+                                        <h5>Horarios disponibles</h5>
+                                        <span class="badge bg-success m-1">8:00 AM</span>
+                                        <span class="badge bg-success m-1">10:00 AM</span>
+                                        <span class="badge bg-danger m-1">12:00 PM</span>
+                                        <span class="badge bg-success m-1">2:00 PM</span>
+                                        <span class="badge bg-danger m-1">4:00 PM</span>
+                                    </div>
+                                </div>
+
+                                <!-- DERECHA -->
+                                <div class="col-md-6">
+
+                                    <!-- MAPA -->
+                                    <div class="mb-3">
+                                        <iframe src="https://www.google.com/maps?q=bogota&output=embed" width="100%"
+                                            height="200"></iframe>
+                                    </div>
+
+                                    <p class="subtitulo-seccion">CANCHAS QUE TE PUEDEN INTERESAR TAMBIEN</p>
+                                    <!--  CARRUSEL -->
+                                    <div id="carouselExample" class="carousel slide mb-3">
+                                        <div class="carousel-inner">
+
+                                            <div class="carousel-item active">
+                                                <img src="https://www.elespectador.com/resizer/v2/IDXTLKBCAJGZNDAKCMJWNBEMCQ.jpg?auth=452426f1ed09fe978005b7dba3a2df862d961539a8afa12a721ac17612697811&width=920&height=613&smart=true&quality=60"
+                                                    class="d-block w-100" height="200">
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvjIZOVgmVNQZZx7IbnVtKfSHIqH_TsyVoTQ&s"
+                                                    class="d-block w-100" height="200">
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <img src="https://irp.cdn-website.com/09dcdaca/dms3rep/multi/empty-white-gate-2023-11-27-05-37-03-utc+%281%29.jpg"
+                                                    class="d-block w-100" height="200">
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <img src="https://vallealto.mx/wp-content/uploads/2021/04/IMG_0179-scaled.jpg"
+                                                    class="d-block w-100" height="200">
+                                            </div>
+
+                                        </div>
+
+                                        <button class="carousel-control-prev" data-bs-target="#carouselExample"
+                                            data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+
+                                        <button class="carousel-control-next" data-bs-target="#carouselExample"
+                                            data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+
+                                    <!--  RESERVAS -->
+                                    <div class="card p-3 shadow">
+                                        <h5>Reservas recientes</h5>
+                                        <ul class="list-group" id="listaReservas"></ul>
+                                    </div>
+
+                                </div>
+                            </div>
+            </div>
+
+            <!--  FOOTER -->
+            <div style="background: linear-gradient(to right, #1f252b, #2b333b); color:white; padding:20px 0;">
+
+                <div class="container">
+
+                    <!--  CONTACTO -->
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            Teléfono: <span style="color:#62ff00;">+57 300 000 0000</span>
+                        </div>
+
+                        <div class="col-md-6 text-md-end">
+                            Correo electrónico:
+                            <span style="color:#62ff00;">canchafacil@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <hr style="border-color: rgba(255,255,255,0.2);">
+
+                    <!--  COPYRIGHT + REDES -->
+                    <div class="row align-items-center">
+
+                        <div class="col-md-6">
+                            Copyright © 2026 CanchaFacil todos los derechos reservados
+                        </div>
+
+                        <div class="col-md-6 text-md-end">
+                            Síguenos en:
+                            <a href="" style="color: #62ff00;"><i class="bi bi-youtube me-2"></i></a>
+                            <a href="" style="color: #62ff00;"><i class="bi bi-facebook me-2"></i></a>
+                            <a href="" style="color: #62ff00;"><i class="bi bi-instagram me-2"></i></a>
+                            <a href="" style="color: #62ff00;"><i class="bi bi-tiktok me-2"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--  MODAL -->
+            <div class="modal fade" id="modalReserva">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Reserva exitosa</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            Tu cancha fue reservada correctamente
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+            <!-- SCRIPT -->
+            <script>
+                const form = document.getElementById("formReserva");
+                const lista = document.getElementById("listaReservas");
+
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    const reserva = {
+                        nombre: form[0].value,
+                        telefono: form[1].value,
+                        fecha: form[2].value,
+                        hora: form[3].value,
+                        cancha: form[4].value,
+                        duracion: form[5].value,
+                        pago: document.getElementById("pago").value,
+                        estado: "Pendiente" // 🔥 CLAVE
+                    };
+
+                    let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+                    reservas.push(reserva);
+
+                    localStorage.setItem("reservas", JSON.stringify(reservas));
+
+                    mostrarReservas();
+
+                    form.reset();
+                });
+
+                function mostrarReservas() {
+                    let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+                    lista.innerHTML = "";
+
+                    reservas.slice(-3).reverse().forEach(r => {
+                        lista.innerHTML += `
+        <li class="list-group-item">
+            ${r.nombre} - ${r.cancha} - ${r.hora} 
+            <br><small>Pago: ${r.pago} | Estado: ${r.estado}</small>
+        </li>`;
+                    });
+                }
+
+                // 🚀 CARGA INICIAL
+                mostrarReservas();
+            </script>
+
+</body>
+
+</html>

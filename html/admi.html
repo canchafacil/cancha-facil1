@@ -47,6 +47,11 @@
                             Ver Reseñas
                         </button>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-custom rounded-pill" id="resenas-tab" data-bs-toggle="tab" data-bs-target="#sec-canchas" type="button" role="tab" aria-controls="sec-resenas" aria-selected="false">
+                            Administrar Canchas
+                        </button>
+                    </li>
                     <li class="nav-item ms-lg-3">
                         <a href="../html/login.html" class="btn btn-salir rounded-pill fw-bold py-2 px-4">Salir</a>    
                     </li>
@@ -58,10 +63,6 @@
     <!-- CONTENEDOR GENERAL DE LAS SECCIONES -->
     <main class="container-fluid px-3 px-md-5 py-5">
         <div class="tab-content" id="admTabsContent">
-            
-            <!-- ======================================================== -->
-            <!-- SECCIÓN 1: INGRESO MES (Módulo Contable Rápido)           -->
-            <!-- ======================================================== -->
             <div class="tab-pane fade show active" id="sec-ingreso-mes" role="tabpanel" aria-labelledby="mes-tab">
                 <div class="container p-0">
                     <h1 class="text-white mb-4 fw-bold text-center text-md-start">Ingresos del Mes</h1>
@@ -198,9 +199,6 @@
                 </div>
             </div>
 
-            <!-- ======================================================== -->
-            <!-- SECCIÓN 3: GESTIÓN DE RESEÑAS (Módulo Completo)           -->
-            <!-- ======================================================== -->
             <div class="tab-pane fade" id="sec-resenas" role="tabpanel" aria-labelledby="resenas-tab">
                 <section class="adm-root container-fluid p-0">
                     
@@ -498,6 +496,326 @@
         renderTodo();
     });
     </script>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container py-5"id="sec-canchas">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Administración de Canchas</h2>
+
+        <button
+          class="btn btn-success"
+          data-bs-toggle="modal"
+          data-bs-target="#modalCancha"
+          style="background-color: #62ff00; border-color: #62ff00; color: black"
+        >
+          + Agregar Cancha
+        </button>
+      </div>
+
+      <div class="row g-4">
+        <!-- CANCHA 1 -->
+        <div class="col-md-4">
+          <div
+            class="card shadow h-100"
+            style="background-color: #03045e; color: white"
+          >
+            <img
+              src="https://www.equiver.com.co/images/campos-futbol-microfutbol-grama-sintetica/campos-futbol-microfutbol-grama-sintetica-2.jpg"
+              class="card-img-top"
+              alt="Cancha"
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">Cancha Principal</h5>
+
+              <p class="card-text">
+                <strong>Tipo:</strong> Fútbol 5 <br />
+                <strong>Precio:</strong> $50.000/hora
+              </p>
+
+              <span class="badge bg-success"> Disponible </span>
+            </div>
+
+            <div class="card-footer border-0 d-flex justify-content-between">
+              <button
+                class="btn btn-warning btn-sm"
+                style="
+                  background-color: #62ff00;
+                  border-color: #62ff00;
+                  color: black;
+                "
+              >
+                Editar
+              </button>
+
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CANCHA 2 -->
+        <div class="col-md-4">
+          <div
+            class="card shadow h-100"
+            style="background-color: #03045e; color: white"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW9qax95RyzyaB4_CHJXXMulQzpZMYt6vctA&s"
+              class="card-img-top"
+              alt="Cancha"
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">Cancha Auxiliar</h5>
+
+              <p class="card-text">
+                <strong>Tipo:</strong> Fútbol 7 <br />
+                <strong>Precio:</strong> $80.000/hora
+              </p>
+
+              <span class="badge bg-secondary"> Mantenimiento </span>
+            </div>
+
+            <div class="card-footer border-0 d-flex justify-content-between">
+              <button
+                class="btn btn-warning btn-sm"
+                style="
+                  background-color: #62ff00;
+                  border-color: #62ff00;
+                  color: black;
+                "
+              >
+                Editar
+              </button>
+
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CANCHA 3 -->
+        <div class="col-md-4">
+          <div
+            class="card shadow h-100"
+            style="background-color: #03045e; color: white"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgSZSr3Ub_Aie0595A6NWWb-hUJp-svEa9xw&s"
+              class="card-img-top"
+              alt="Cancha"
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">Cancha Sintética Norte</h5>
+
+              <p class="card-text">
+                <strong>Tipo:</strong> Fútbol 5 <br />
+                <strong>Precio:</strong> $60.000/hora
+              </p>
+
+              <span class="badge bg-success"> Disponible </span>
+            </div>
+
+            <div class="card-footer border-0 d-flex justify-content-between">
+              <button
+                class="btn btn-warning btn-sm"
+                style="
+                  background-color: #62ff00;
+                  border-color: #62ff00;
+                  color: black;
+                "
+              >
+                Editar
+              </button>
+
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CANCHA 4 -->
+        <div class="col-md-4">
+          <div
+            class="card shadow h-100"
+            style="background-color: #03045e; color: white"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsFDFRsVRmEBzpEdQgnl9x4sqxS-ZnNTWmiA&s"
+              class="card-img-top"
+              alt="Cancha"
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">Cancha Principal</h5>
+
+              <p class="card-text">
+                <strong>Tipo:</strong> Fútbol 5 <br />
+                <strong>Precio:</strong> $50.000/hora
+              </p>
+
+              <span class="badge bg-success"> Disponible </span>
+            </div>
+
+            <div class="card-footer border-0 d-flex justify-content-between">
+              <button
+                class="btn btn-warning btn-sm"
+                style="
+                  background-color: #62ff00;
+                  border-color: #62ff00;
+                  color: black;
+                "
+              >
+                Editar
+              </button>
+
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CANCHA 5 -->
+        <div class="col-md-4">
+          <div
+            class="card shadow h-100"
+            style="background-color: #03045e; color: white"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQ5MdjsJ09pKlqY3Jn0kwB3Ife_YXl5zOiA&s"
+              class="card-img-top"
+              alt="Cancha"
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">Cancha Principal</h5>
+
+              <p class="card-text">
+                <strong>Tipo:</strong> Fútbol 5 <br />
+                <strong>Precio:</strong> $50.000/hora
+              </p>
+
+              <span class="badge bg-success"> Disponible </span>
+            </div>
+
+            <div class="card-footer border-0 d-flex justify-content-between">
+              <button
+                class="btn btn-warning btn-sm"
+                style="
+                  background-color: #62ff00;
+                  border-color: #62ff00;
+                  color: black;
+                "
+              >
+                Editar
+              </button>
+
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CANCHA 6 -->
+        <div class="col-md-4">
+          <div
+            class="card shadow h-100"
+            style="background-color: #03045e; color: white"
+          >
+            <img
+              src="https://www2.culturarecreacionydeporte.gov.co/sites/default/files/styles/escala_800_px/public/2015_articulos_2/cfiip.jpg?itok=UzCjkm7B"
+              class="card-img-top"
+              alt="Cancha"
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">Cancha Principal</h5>
+
+              <p class="card-text">
+                <strong>Tipo:</strong> Fútbol 5 <br />
+                <strong>Precio:</strong> $50.000/hora
+              </p>
+
+              <span class="badge bg-success"> Disponible </span>
+            </div>
+
+            <div class="card-footer border-0 d-flex justify-content-between">
+              <button
+                class="btn btn-warning btn-sm"
+                style="
+                  background-color: #62ff00;
+                  border-color: #62ff00;
+                  color: black;
+                "
+              >
+                Editar
+              </button>
+
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL AGREGAR CANCHA -->
+    <div class="modal fade" id="modalCancha" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Agregar Cancha</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label class="form-label"> Nombre de la Cancha </label>
+
+                <input type="text" class="form-control" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label"> Tipo de Cancha </label>
+
+                <select class="form-select">
+                  <option>Fútbol 5</option>
+                  <option>Fútbol 7</option>
+                  <option>Fútbol 11</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label"> Precio por Hora </label>
+
+                <input type="number" class="form-control" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label"> Imagen </label>
+
+                <input type="file" class="form-control" />
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-success w-100"
+                style="
+                  background-color: #62ff00;
+                  border-color: #62ff00;
+                  color: black;
+                "
+              >
+                Guardar Cancha
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
      
     <!-- Bootstrap 5 Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

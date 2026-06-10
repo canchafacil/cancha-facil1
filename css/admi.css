@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. IMPORTACIONES, VARIABLES Y RESET
-   ========================================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap');
 
 :root {
@@ -31,10 +29,6 @@ body.adm-body {
     min-height: 100vh;
     overflow-x: hidden;
 }
-
-/* ==========================================================================
-   2. NAVBAR COMPARTIDO Y BOTONES DE NAVEGACIÓN (PESTAÑAS)
-   ========================================================================== */
 .cancha-nav {
     background-color: var(--bg-black) !important;
     border-bottom: 2px solid #1c2222 !important;
@@ -89,9 +83,6 @@ body.adm-body {
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   3. MÓDULO: INGRESO MES (Tarjetas de Reservas y Panel Lateral)
-   ========================================================================== */
 .tarjeta-reserva {
     background-color: var(--bg-dark-card);
     border: 1px solid #222;
@@ -129,9 +120,6 @@ body.adm-body {
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   4. MÓDULO: HISTORIAL DE INGRESOS (Gráfico e Historial Mensual)
-   ========================================================================== */
 .cuadro-grafico {
     background-color: var(--bg-dark-card);
     border: 1px solid #222;
@@ -161,9 +149,6 @@ body.adm-body {
     letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   5. MÓDULO: PANEL DE RESEÑAS (Filtros, Tablas y Modales)
-   ========================================================================== */
 .adm-titulo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
@@ -246,6 +231,101 @@ body.adm-body {
     color: var(--bg-black);
     border-color: var(--primary-color);
 }
+
+
+
+
+
+/* ===== BOTON AGREGAR ===== */
+.btn-agregar {
+  background-color: #62FF00;
+  color: black;
+  border: none;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn-agregar:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* ===== TARJETAS ===== */
+.card {
+  background-color: #1a1a1a !important;
+  border: 1px solid #2d2d2d !important;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #62FF00 !important;
+  box-shadow: 0 0 15px rgba(98,255,0,.2);
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: #62FF00;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #dcdcdc;
+}
+
+.card-footer {
+  background-color: #1a1a1a !important;
+  border-top: 1px solid #2d2d2d;
+}
+
+/* ===== BOTON EDITAR ===== */
+.btn-editar {
+  background-color: #62FF00;
+  color: black;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-editar:hover {
+  background-color: white;
+}
+
+/* ===== MODAL ===== */
+.modal-content {
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #2d2d2d;
+}
+
+.modal-header {
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.modal-title {
+  color: #62FF00;
+}
+
+.form-control,
+.form-select {
+  background-color: #111;
+  color: white;
+  border: 1px solid #333;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #111;
+  color: white;
+  border-color: #62FF00;
+  box-shadow: none;
+} 
 
 /* Estructura de la Tabla */
 .adm-tabla-wrap {
@@ -432,9 +512,6 @@ body.adm-body {
 
 .adm-btn-confirmar:hover { background: #b91c1c; }
 
-/* ==========================================================================
-   6. ANIMACIONES Y PERSONALIZACIÓN DE SCROLLBARS
-   ========================================================================== */
 @keyframes fila-salir {
     from { opacity: 1; transform: scaleY(1); }
     to   { opacity: 0; transform: scaleY(0); }
