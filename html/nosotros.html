@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../css/nosotros.css">
-    <link rel="stylesheet" href="resenas.css">
 </head>
 
 <body>
@@ -192,127 +191,243 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        const resenas = [
-            { nombre:"Carlos Mendoza", jugador:"Capitán de equipo", cancha:"Fútbol 8", estrellas:5, texto:"La iluminación nocturna es excelente, jugamos hasta las 11 pm sin ningún problema. El pasto sintético en perfecto estado." },
-            { nombre:"Valentina Ríos", jugador:"Jugadora amateur", cancha:"Fútbol 5", estrellas:5, texto:"Reservé en menos de 2 minutos desde el celular. Proceso súper fácil y el precio es muy justo para la calidad que ofrecen." },
-            { nombre:"Andrés Camargo", jugador:"Organizador de torneos", cancha:"Cancha múltiple", estrellas:5, texto:"Organizamos torneos aquí cada mes. El staff es puntual y las canchas siempre en perfectas condiciones. Totalmente recomendado." },
-            { nombre:"María Fernanda G.", jugador:"Jugadora recreativa", cancha:"Fútbol 5", estrellas:5, texto:"Me sorprendió lo bien cuidada que está la grama. Ambiente seguro y muy limpio. Volvería mil veces más sin dudarlo." },
-            { nombre:"Felipe Ortega", jugador:"Jugador semiprofesional", cancha:"Fútbol 8", estrellas:4, texto:"La cancha es de muy buena calidad. Solo sugeriría agregar más zona de descanso para los jugadores que esperan turno." }
-        ];
-         
-        let estrellaActual = 0;
-         
-        function starsHTML(n) {
-            let html = '';
-            for (let i = 1; i <= 5; i++) {
-                const color = i <= n ? '#facc15' : '#d1d5db';
-                html += `<span style="color:${color};">★</span>`;
-            }
-            return html;
+let resenas = JSON.parse(localStorage.getItem("resenas")) || [
+    {
+        id:1,
+        nombre:"Carlos Mendoza",
+        jugador:"Capitán de equipo",
+        cancha:"Fútbol 8",
+        estrellas:5,
+        texto:"La iluminación nocturna es excelente, jugamos hasta las 11 pm sin ningún problema. El pasto sintético en perfecto estado."
+    },
+    {
+        id:2,
+        nombre:"Valentina Ríos",
+        jugador:"Jugadora amateur",
+        cancha:"Fútbol 5",
+        estrellas:5,
+        texto:"Reservé en menos de 2 minutos desde el celular. Proceso súper fácil y el precio es muy justo para la calidad que ofrecen."
+    },
+    {
+        id:3,
+        nombre:"Andrés Camargo",
+        jugador:"Organizador de torneos",
+        cancha:"Cancha múltiple",
+        estrellas:5,
+        texto:"Organizamos torneos aquí cada mes. El staff es puntual y las canchas siempre en perfectas condiciones. Totalmente recomendado."
+    },
+    {
+        id:4,
+        nombre:"María Fernanda G.",
+        jugador:"Jugadora recreativa",
+        cancha:"Fútbol 5",
+        estrellas:5,
+        texto:"Me sorprendió lo bien cuidada que está la grama. Ambiente seguro y muy limpio. Volvería mil veces más sin dudarlo."
+    },
+    {
+        id:5,
+        nombre:"Felipe Ortega",
+        jugador:"Jugador semiprofesional",
+        cancha:"Fútbol 8",
+        estrellas:4,
+        texto:"La cancha es de muy buena calidad. Solo sugeriría agregar más zona de descanso para los jugadores que esperan turno."
+    }
+];
+
+let estrellaActual = 0;
+
+function starsHTML(n) {
+    let html = "";
+    for (let i = 1; i <= 5; i++) {
+        html += `<span style="color:${i <= n ? '#facc15' : '#d1d5db'}">★</span>`;
+    }
+    return html;
+}
+
+function iniciales(nombre) {
+    if (!nombre) return "CF";
+
+    return nombre
+        .trim()
+        .split(" ")
+        .filter(p => p.length > 0)
+        .slice(0, 2)
+        .map(p => p[0])
+        .join("")
+        .toUpperCase();
+}
+
+function crearCard(r) {
+    const card = document.createElement("div");
+
+    card.className = "rf-card";
+
+    card.innerHTML = `
+        <div class="rf-card-top">
+            <div class="rf-avatar">${iniciales(r.nombre)}</div>
+            <div>
+                <p class="rf-nombre">${r.nombre}</p>
+                <p class="rf-tipo-jugador">${r.jugador}</p>
+            </div>
+        </div>
+
+        <div class="rf-stars">
+            ${starsHTML(r.estrellas)}
+        </div>
+
+        <span class="rf-badge">${r.cancha}</span>
+
+        <p class="rf-texto">"${r.texto}"</p>
+    `;
+
+    return card;
+}
+
+function renderTodas() {
+
+    resenas = JSON.parse(localStorage.getItem("resenas")) || resenas;
+
+    const grid = document.getElementById("rf-grid");
+
+    grid.innerHTML = "";
+
+    resenas.forEach(r => {
+        grid.appendChild(crearCard(r));
+    });
+
+    actualizarStats();
+}
+
+function actualizarStats() {
+
+    document.getElementById("stat-total").textContent = resenas.length;
+
+    if (resenas.length === 0) {
+        document.getElementById("stat-prom").textContent = "0";
+        return;
+    }
+
+    const prom =
+        resenas.reduce((a, r) => a + Number(r.estrellas), 0) / resenas.length;
+
+    document.getElementById("stat-prom").textContent =
+        prom.toFixed(1);
+}
+
+const labels = [
+    "",
+    "Malo",
+    "Regular",
+    "Bueno",
+    "Muy bueno",
+    "Excelente"
+];
+
+function highlightStars(v) {
+
+    document.querySelectorAll(".rf-star-btn").forEach(btn => {
+
+        const val = parseInt(btn.dataset.v);
+
+        if (val <= v) {
+            btn.style.color = "#facc15";
+        } else {
+            btn.style.color = "#d1d5db";
         }
-         
-        function iniciales(nombre) {
-            return nombre.split(' ').slice(0, 2).map(p => p[0]).join('').toUpperCase();
-        }
-         
-        function crearCard(r, nueva) {
-            const card = document.createElement('div');
-            card.className = 'rf-card' + (nueva ? ' nueva' : '');
-            card.innerHTML = `
-                <div class="rf-card-top">
-                    <div class="rf-avatar">${iniciales(r.nombre)}</div>
-                    <div>
-                        <p class="rf-nombre">${r.nombre}</p>
-                        <p class="rf-tipo-jugador">${r.jugador}</p>
-                    </div>
-                </div>
-                <div class="rf-stars">${starsHTML(r.estrellas)}</div>
-                <span class="rf-badge">${r.cancha}</span>
-                <p class="rf-texto">"${r.texto}"</p>
-            `;
-            return card;
-        }
-         
-        function renderTodas() {
-            const grid = document.getElementById('rf-grid');
-            grid.innerHTML = '';
-            resenas.forEach(r => grid.appendChild(crearCard(r, false)));
-            actualizarStats();
-        }
-         
-        function actualizarStats() {
-            document.getElementById('stat-total').textContent = resenas.length;
-            const prom = resenas.reduce((a, r) => a + r.estrellas, 0) / resenas.length;
-            document.getElementById('stat-prom').textContent = prom.toFixed(1);
-        }
-         
-        const labels = ['', 'Malo', 'Regular', 'Bueno', 'Muy bueno', 'Excelente'];
-         
-        document.querySelectorAll('.rf-star-btn').forEach(btn => {
-            btn.addEventListener('click', () => setStar(parseInt(btn.dataset.v)));
-            btn.addEventListener('mouseenter', () => highlightStars(parseInt(btn.dataset.v)));
-            btn.addEventListener('mouseleave', () => highlightStars(estrellaActual));
+    });
+}
+
+function setStar(v) {
+
+    estrellaActual = v;
+
+    document.getElementById("star-label").textContent =
+        labels[v];
+
+    highlightStars(v);
+}
+
+function enviarResena() {
+
+    const nombre =
+        document.getElementById("f-nombre").value.trim();
+
+    const jugador =
+        document.getElementById("f-jugador").value;
+
+    const cancha =
+        document.getElementById("f-cancha").value;
+
+    const texto =
+        document.getElementById("f-texto").value.trim();
+
+    if (!nombre || !jugador || !cancha || !texto || estrellaActual === 0) {
+        alert("Completa todos los campos.");
+        return;
+    }
+
+    const nueva = {
+        id: Date.now(),
+        nombre,
+        jugador,
+        cancha,
+        estrellas: estrellaActual,
+        texto,
+        fecha: new Date().toISOString()
+    };
+
+    resenas.unshift(nueva);
+
+    localStorage.setItem(
+        "resenas",
+        JSON.stringify(resenas)
+    );
+
+    renderTodas();
+
+    document.getElementById("f-nombre").value = "";
+    document.getElementById("f-jugador").value = "";
+    document.getElementById("f-cancha").value = "";
+    document.getElementById("f-texto").value = "";
+
+    estrellaActual = 0;
+
+    document.getElementById("star-label").textContent =
+        "Sin calificar";
+
+    highlightStars(0);
+
+    const toast = document.getElementById("rf-toast");
+
+    toast.style.display = "block";
+
+    setTimeout(() => {
+        toast.style.display = "none";
+    }, 3000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelectorAll(".rf-star-btn").forEach(btn => {
+
+        btn.addEventListener("click", () => {
+            setStar(parseInt(btn.dataset.v));
         });
-         
-        function highlightStars(v) {
-            document.querySelectorAll('.rf-star-btn').forEach(btn => {
-                const val = parseInt(btn.dataset.v);
-                if (val <= v) {
-                    btn.style.color = '#facc15';
-                    btn.style.background = 'rgba(250,204,21,0.15)';
-                    btn.style.borderColor = '#facc15';
-                } else {
-                    btn.style.color = 'rgba(255,255,255,0.25)';
-                    btn.style.background = 'rgba(255,255,255,0.08)';
-                    btn.style.borderColor = 'rgba(255,255,255,0.15)';
-                }
-            });
-        }
-         
-        function setStar(v) {
-            estrellaActual = v;
-            document.getElementById('star-label').textContent = labels[v];
-            highlightStars(v);
-        }
-         
-        function enviarResena() {
-            const nombre  = document.getElementById('f-nombre').value.trim();
-            const jugador = document.getElementById('f-jugador').value;
-            const cancha  = document.getElementById('f-cancha').value;
-            const texto   = document.getElementById('f-texto').value.trim();
-         
-            if (!nombre || !jugador || !cancha || !texto || estrellaActual === 0) {
-                alert('Por favor completa todos los campos y selecciona una calificación.');
-                return;
-            }
-         
-            const nueva = { nombre, jugador, cancha, estrellas: estrellaActual, texto };
-            resenas.unshift(nueva);
-         
-            const grid = document.getElementById('rf-grid');
-            const card = crearCard(nueva, true);
-            grid.insertBefore(card, grid.firstChild);
-         
-            card.addEventListener('animationend', () => card.classList.remove('nueva'));
-         
-            actualizarStats();
-         
-            document.getElementById('f-nombre').value  = '';
-            document.getElementById('f-jugador').value = '';
-            document.getElementById('f-cancha').value  = '';
-            document.getElementById('f-texto').value   = '';
-            estrellaActual = 0;
-            document.getElementById('star-label').textContent = 'Sin calificar';
-            highlightStars(0);
-         
-            const toast = document.getElementById('rf-toast');
-            toast.style.display = 'block';
-            setTimeout(() => toast.style.display = 'none', 3500);
-         
-            document.getElementById('rf-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-         
-        renderTodas();
-    </script>
+
+        btn.addEventListener("mouseenter", () => {
+            highlightStars(parseInt(btn.dataset.v));
+        });
+
+        btn.addEventListener("mouseleave", () => {
+            highlightStars(estrellaActual);
+        });
+
+    });
+
+    renderTodas();
+    highlightStars(0);
+
+});
+</script>
 </body>
 </html>

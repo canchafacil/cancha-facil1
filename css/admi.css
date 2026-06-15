@@ -1,13 +1,12 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&family=Roboto+Condensed:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #62FF00;   /* Verde Principal */
-    --bg-black: #000000;        /* Negro Absoluto Fondo principal */
-    --bg-dark-card: #121212;    /* Variación gris oscuro para contenedores */
-    --text-white: #FFFFFF;      /* Blanco apoyo */
-    --hover-gray: #525151;      /* Color Hover / Fondo Alterno */
-    --danger-red: #ef4444;      /* Rojo Errores/Eliminaciones */
+    --primary-color: #62FF00;
+    --bg-black: #000000;
+    --bg-dark-card: #121212;
+    --text-white: #FFFFFF;
+    --hover-gray: #525151;
+    --danger-red: #ef4444;
 }
 
 * {
@@ -18,8 +17,7 @@
 
 body.adm-body {
     background-color: var(--bg-black);
-    /* Imagen de fondo unificada con filtro oscuro corporativo */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/fondo-admi.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(../img/fondo-admi.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,6 +27,8 @@ body.adm-body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+
+/* ── NAV ── */
 .cancha-nav {
     background-color: var(--bg-black) !important;
     border-bottom: 2px solid #1c2222 !important;
@@ -44,7 +44,6 @@ body.adm-body {
     text-decoration: none;
 }
 
-/* Botón estilo pestaña (Activa / Inactiva) */
 .btn-custom {
     background-color: transparent;
     color: var(--text-white);
@@ -54,45 +53,41 @@ body.adm-body {
     padding: 8px 24px;
     transition: all 0.3s ease-in-out;
 }
-
 .btn-custom:hover {
     background-color: var(--hover-gray);
     color: var(--primary-color);
     border-color: var(--primary-color);
 }
-
 .btn-custom.active {
     background-color: var(--primary-color) !important;
     color: var(--bg-black) !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 0 15px rgba(98, 255, 0, 0.4);
+    box-shadow: 0 0 15px rgba(98,255,0,0.4);
 }
 
-/* Botón de Salir */
 .btn-salir {
     background-color: #2a1414;
     color: var(--danger-red);
     border: 2px solid var(--danger-red);
     transition: all 0.2s ease-in-out;
 }
-
 .btn-salir:hover {
     background-color: var(--danger-red);
     color: var(--text-white);
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 15px rgba(239,68,68,0.4);
     transform: translateY(-2px);
 }
 
+/* ── INGRESO MES ── */
 .tarjeta-reserva {
     background-color: var(--bg-dark-card);
     border: 1px solid #222;
     border-left: 5px solid var(--primary-color);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .tarjeta-reserva:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(98, 255, 0, 0.15) !important;
+    box-shadow: 0 6px 20px rgba(98,255,0,0.15) !important;
 }
 
 .text-bg-verde {
@@ -112,14 +107,14 @@ body.adm-body {
     border: none;
     transition: all 0.3s ease-in-out;
 }
-
 .btn-panel-action:hover {
     background-color: var(--hover-gray);
     color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(98, 255, 0, 0.4);
+    box-shadow: 0 0 20px rgba(98,255,0,0.4);
     transform: translateY(-2px);
 }
 
+/* ── INGRESOS ── */
 .cuadro-grafico {
     background-color: var(--bg-dark-card);
     border: 1px solid #222;
@@ -131,15 +126,14 @@ body.adm-body {
 }
 
 .tarjeta-mes {
-    background-color: var(--bg-dark-card); 
+    background-color: var(--bg-dark-card);
     border: 1px solid #222;
-    border-left: 5px solid var(--primary-color); 
+    border-left: 5px solid var(--primary-color);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .tarjeta-mes:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(98, 255, 0, 0.2) !important;
+    box-shadow: 0 6px 15px rgba(98,255,0,0.2) !important;
 }
 
 .monto-ingreso {
@@ -149,16 +143,16 @@ body.adm-body {
     letter-spacing: 0.5px;
 }
 
+/* ── RESEÑAS — header ── */
 .adm-titulo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.5rem;
     letter-spacing: 2px;
     color: var(--text-white);
 }
-
 .adm-sub {
-    color: #888;
-    font-size: 0.9rem;
+    color: var(--text-white);
+    font-size: 0.95rem;
 }
 
 .adm-stat-box {
@@ -169,7 +163,6 @@ body.adm-body {
     min-width: 110px;
     text-align: center;
 }
-
 .adm-stat-n {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.2rem;
@@ -177,14 +170,14 @@ body.adm-body {
     display: block;
     line-height: 1;
 }
-
 .adm-stat-l {
-    font-size: 0.75rem;
-    color: #666;
+    font-size: 0.85rem;
+    color: var(--text-white);
     text-transform: uppercase;
     font-weight: 700;
 }
 
+/* ── RESEÑAS — toolbar ── */
 .adm-toolbar {
     background: var(--bg-dark-card);
     border: 1px solid #222;
@@ -199,16 +192,13 @@ body.adm-body {
     font-size: 0.9rem;
     padding: 10px;
 }
-
 .adm-select:focus, .adm-input:focus {
     border-color: var(--primary-color) !important;
-    box-shadow: 0 0 10px rgba(98, 255, 0, 0.3) !important;
+    box-shadow: 0 0 10px rgba(98,255,0,0.3) !important;
 }
+.adm-input::placeholder { color: #aaaaaa; }
 
-.adm-input::placeholder {
-    color: #555;
-}
-
+/* Botón toggle Ver archivados / Ver activas */
 .adm-btn-arch {
     background: var(--bg-black);
     color: var(--text-white);
@@ -219,115 +209,49 @@ body.adm-body {
     font-weight: 700;
     white-space: nowrap;
     transition: all 0.2s;
+    cursor: pointer;
 }
-
 .adm-btn-arch:hover {
     background: var(--hover-gray);
     border-color: var(--hover-gray);
 }
-
 .adm-btn-arch.activo {
     background: var(--primary-color);
     color: var(--bg-black);
     border-color: var(--primary-color);
 }
 
-
-
-
-
-/* ===== BOTON AGREGAR ===== */
-.btn-agregar {
-  background-color: #62FF00;
-  color: black;
-  border: none;
-  font-weight: bold;
-  transition: .3s;
+/* Alias para el botón toggle usado desde JS como .adm-btn */
+.adm-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    white-space: nowrap;
+    background: var(--bg-black);
+    color: var(--text-white);
+    border: 1.5px solid #222;
 }
+.adm-btn:hover { transform: translateY(-1px); background: var(--hover-gray); border-color: var(--hover-gray); }
+.adm-btn.activo { background: var(--primary-color); color: var(--bg-black); border-color: var(--primary-color); }
 
-.btn-agregar:hover {
-  background-color: white;
-  color: black;
-  transform: translateY(-2px);
-}
+.adm-btn.editar    { background: #1a1a2e; color: #62ff00; }
+.adm-btn.editar:hover { background: rgba(98,255,0,0.2); }
 
-/* ===== TARJETAS ===== */
-.card {
-  background-color: #1a1a1a !important;
-  border: 1px solid #2d2d2d !important;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: .3s;
-}
+.adm-btn.archivar  { background: #222; color: #fff; border-color: #333; }
+.adm-btn.archivar:hover { background: var(--hover-gray); }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #62FF00 !important;
-  box-shadow: 0 0 15px rgba(98,255,0,.2);
-}
+.adm-btn.restaurar { background: rgba(98,255,0,0.12); color: var(--primary-color); border-color: rgba(98,255,0,0.25); }
+.adm-btn.restaurar:hover { background: rgba(98,255,0,0.25); }
 
-.card img {
-  height: 220px;
-  object-fit: cover;
-}
+.adm-btn.eliminar  { background: #2a1414; color: var(--danger-red); border-color: #3a1a1a; }
+.adm-btn.eliminar:hover { background: #451a1a; }
 
-.card-title {
-  color: #62FF00;
-  font-weight: bold;
-}
-
-.card-text {
-  color: #dcdcdc;
-}
-
-.card-footer {
-  background-color: #1a1a1a !important;
-  border-top: 1px solid #2d2d2d;
-}
-
-/* ===== BOTON EDITAR ===== */
-.btn-editar {
-  background-color: #62FF00;
-  color: black;
-  border: none;
-  font-weight: bold;
-}
-
-.btn-editar:hover {
-  background-color: white;
-}
-
-/* ===== MODAL ===== */
-.modal-content {
-  background-color: #1a1a1a;
-  color: white;
-  border: 1px solid #2d2d2d;
-}
-
-.modal-header {
-  border-bottom: 1px solid #2d2d2d;
-}
-
-.modal-title {
-  color: #62FF00;
-}
-
-.form-control,
-.form-select {
-  background-color: #111;
-  color: white;
-  border: 1px solid #333;
-}
-
-.form-control:focus,
-.form-select:focus {
-  background-color: #111;
-  color: white;
-  border-color: #62FF00;
-  box-shadow: none;
-} 
-
-/* Estructura de la Tabla */
+/* ── RESEÑAS — tabla ── */
 .adm-tabla-wrap {
     overflow-x: auto;
     border-radius: 12px;
@@ -340,19 +264,15 @@ body.adm-body {
     min-width: 1000px;
 }
 
-.adm-tabla thead tr {
-    background-color: var(--bg-dark-card);
-}
-
+.adm-tabla thead tr { background-color: var(--bg-dark-card); }
 .adm-tabla thead th {
-    color: var(--primary-color);
+    color: var(--text-white);
     padding: 16px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 1px;
     border: none;
 }
-
 .adm-tabla thead th:first-child { border-radius: 8px 0 0 8px; }
 .adm-tabla thead th:last-child  { border-radius: 0 8px 8px 0; }
 
@@ -361,20 +281,17 @@ body.adm-body {
     border: 1px solid #1e1e1e;
     transition: transform 0.15s, background-color 0.15s;
 }
-
 .adm-tabla tbody tr:hover {
     background-color: #181818;
     transform: scale(1.002);
 }
-
 .adm-tabla tbody td {
     padding: 16px;
     font-size: 0.9rem;
-    color: #bbb;
+    color: var(--text-white);
     vertical-align: middle;
     border: none;
 }
-
 .adm-tabla tbody td:first-child { border-radius: 8px 0 0 8px; }
 .adm-tabla tbody td:last-child  { border-radius: 0 8px 8px 0; }
 
@@ -394,96 +311,36 @@ body.adm-body {
 
 .adm-tag {
     background: #1e1e1e;
-    color: #aaa;
+    color: #e0e0e0;
     font-size: 0.78rem;
     font-weight: 700;
     padding: 6px 12px;
     border-radius: 6px;
     white-space: nowrap;
 }
-
 .adm-tag.cancha {
-    background: rgba(98, 255, 0, 0.1);
+    background: rgba(98,255,0,0.1);
     color: var(--primary-color);
-    border: 1px solid rgba(98, 255, 0, 0.2);
+    border: 1px solid rgba(98,255,0,0.2);
 }
 
-.adm-comentario {
-    max-width: 280px;
-    color: #ddd;
-    line-height: 1.5;
-}
+.adm-comentario { max-width: 280px; color: #f1f1f1; line-height: 1.5; }
+.adm-fecha      { white-space: nowrap; color: #cccccc; font-size: 0.85rem; }
+.adm-stars      { font-size: 1rem; letter-spacing: 1px; }
+.adm-acciones   { display: flex; flex-wrap: wrap; gap: 6px; }
+.adm-empty      { color: rgba(255,255,255,0.45); }
 
-.adm-fecha {
-    white-space: nowrap;
-    color: #666;
-    font-size: 0.85rem;
-}
-
-/* Botones de acción dentro de la tabla */
-.adm-btn {
-    border: none;
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    white-space: nowrap;
-}
-
-.adm-btn:hover {
-    transform: translateY(-1px);
-}
-
-.adm-btn.archivar {
-    background: #222;
-    color: #fff;
-}
-
-.adm-btn.archivar:hover {
-    background: var(--hover-gray);
-}
-
-.adm-btn.restaurar {
-    background: rgba(98,255,0,0.15);
-    color: var(--primary-color);
-}
-
-.adm-btn.restaurar:hover {
-    background: rgba(98,255,0,0.3);
-}
-
-.adm-btn.eliminar {
-    background: #2a1414;
-    color: var(--danger-red);
-}
-
-.adm-btn.eliminar:hover {
-    background: #451a1a;
-}
-
-.adm-arch-banner {
-    background: #2a1a00;
-    border-left: 4px solid #ff9900;
-    color: #ff9900;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-/* Modal de eliminación */
+/* ── MODALES reseñas ── */
 .adm-modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0,0,0,0.85);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1100;
     backdrop-filter: blur(4px);
 }
-
 .adm-modal {
     background: var(--bg-dark-card);
     border: 1px solid #222;
@@ -491,64 +348,90 @@ body.adm-body {
     width: 90%;
     animation: modal-in 0.2s ease-out;
 }
-
 .adm-modal-titulo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
-    color: var(--danger-red);
-}
-
-.adm-btn-cancelar {
-    background: #222;
     color: var(--text-white);
 }
-
-.adm-btn-cancelar:hover { background: var(--hover-gray); }
-
-.adm-btn-confirmar {
-    background: var(--danger-red);
-    color: var(--text-white);
-}
-
+.adm-btn-cancelar  { background: #222; color: var(--text-white); border: none; }
+.adm-btn-cancelar:hover  { background: var(--hover-gray); }
+.adm-btn-confirmar { background: var(--danger-red); color: var(--text-white); border: none; }
 .adm-btn-confirmar:hover { background: #b91c1c; }
 
+/* ── CANCHAS ── */
+.btn-agregar {
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    font-weight: bold;
+    transition: .3s;
+}
+.btn-agregar:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-2px);
+}
+
+.card {
+    background-color: #1a1a1a !important;
+    border: 1px solid #2d2d2d !important;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .3s;
+    color: var(--text-white) !important;
+}
+.card h6, .card h5, .card h3 { color: var(--text-white) !important; }
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 15px rgba(98,255,0,.2);
+}
+.card img { height: 220px; object-fit: cover; }
+.card-title  { color: var(--primary-color) !important; font-weight: bold; }
+.card-text   { color: #dcdcdc; }
+.card-footer { background-color: #1a1a1a !important; border-top: 1px solid #2d2d2d; }
+
+.btn-editar { background-color: var(--primary-color); color: black; border: none; font-weight: bold; }
+.btn-editar:hover { background-color: white; }
+
+.modal-content  { background-color: #1a1a1a; color: var(--text-white); border: 1px solid #2d2d2d; }
+.modal-header   { border-bottom: 1px solid #2d2d2d; }
+.modal-title    { color: var(--primary-color); }
+.form-control, .form-select {
+    background-color: #111;
+    color: var(--text-white);
+    border: 1px solid #333;
+}
+.form-control:focus, .form-select:focus {
+    background-color: #111;
+    color: var(--text-white);
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* ── ANIMACIONES ── */
 @keyframes fila-salir {
     from { opacity: 1; transform: scaleY(1); }
     to   { opacity: 0; transform: scaleY(0); }
 }
-
 @keyframes modal-in {
     from { opacity: 0; transform: scale(0.95); }
     to   { opacity: 1; transform: scale(1); }
 }
-
 .adm-tabla tbody tr.salir {
     animation: fila-salir 0.25s ease forwards;
     transform-origin: top;
 }
 
-/* Scrollbar General y Tablas */
+/* ── SCROLLBARS ── */
 .custom-scrollbar::-webkit-scrollbar,
-.listado-meses::-webkit-scrollbar {
-    width: 6px;
-    height: 8px;
-}
+.listado-meses::-webkit-scrollbar  { width: 6px; height: 8px; }
 
 .custom-scrollbar::-webkit-scrollbar-track,
-.listado-meses::-webkit-scrollbar-track {
-    background: var(--bg-black);
-}
+.listado-meses::-webkit-scrollbar-track { background: var(--bg-black); }
 
 .custom-scrollbar::-webkit-scrollbar-thumb,
-.listado-meses::-webkit-scrollbar-thumb {
-    background: #222;
-    border-radius: 10px;
-}
+.listado-meses::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
 
-.listado-meses::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: var(--hover-gray);
-}
+.listado-meses::-webkit-scrollbar-thumb { background: var(--primary-color); }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--hover-gray); }
